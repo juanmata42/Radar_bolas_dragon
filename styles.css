@@ -222,7 +222,7 @@ body {
 
 }
 
-/* #indicator-1 {
+#indicator-1 {
     top: 40%;
     left: 20%;
 }
@@ -255,50 +255,42 @@ body {
 #indicator-7 {
     top: 70%;
     left: 75%;
-} */
+}
 
-#indicator-1 {
+/* #indicator-1 {
     top: calc(55% - 4%);
     left: 48%;
 }
 
-/* top center */
 #indicator-2 {
     top: calc(55% - 3.5%);
     left: calc(48% + 5%);
 }
 
-/* top right */
 #indicator-3 {
     top: 55%;
     left: calc(48% + 7%);
 }
 
-/* right */
 #indicator-4 {
     top: calc(55% + 3.5%);
     left: calc(48% + 5%);
 }
 
-/* bottom right */
 #indicator-5 {
     top: calc(55% + 4%);
     left: 48%;
 }
 
-/* bottom center */
 #indicator-6 {
     top: calc(55% + 2.5%);
     left: calc(48% - 4%);
 }
 
-/* bottom left */
 #indicator-7 {
     top: calc(55% - 1.5%);
     left: calc(48% - 4%);
-}
-
-/* left */
+} */
 
 
 .clue-container {
