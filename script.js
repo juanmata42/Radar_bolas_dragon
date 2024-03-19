@@ -48,7 +48,7 @@ const clues = [
     'Como en nuestras tardes de juegos, la aventura empieza donde guardamos secretos, sueños e incontables horas de diversión. Ahí encontrarás la estrella que ilumina nuestro inicio.',
     'En el mundo de Hyrule o explorando el Reino Champiñón, siempre has sido mi compañera de aventuras. Busca en el lugar donde Link y Mario descansan, para encontrar la próxima estrella.',
     'Para seguir tu camino en esta búsqueda, necesitarás la energía de una Saiyan. Encuentra el sustento de Goku para descubrir tu próximo destino.',
-    'En tierras lejanas y ciudades desconocidas, has demostrado ser una estratega y compañera sin igual. Busca entre los juegos donde hemos combatido juntos y descubierto tesoros.',
+    'En tierras lejanas y ciudades desconocidas, has demostrado ser una estratega y compañera sin igual. Busca entre la ciudad donde nos conocimos, donde hemos combatido juntos y descubierto tesoros.',
     'Como dijo Tyrion, busca las piedras de afilar que utilizaste para alcanzar y mantener tu agudeza.',
     'Para alcanzar el próximo nivel, una verdadera Saiyan nunca deja de entrenar. A Brandon Stark le habría encantado tener de estos  antes de su caída. Tu fuerza interior te guiará a la siguiente estrella.',
     'Para encontrar la próxima estrella, necesitarás de todo tu poder e inteligencia, pues tendrás que derrotar a un antiguo mal durmiente que la ha consumido y tomarla de sus mismísimas entrañas.'
