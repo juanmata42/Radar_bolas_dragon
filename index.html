@@ -8,43 +8,46 @@
 </head>
 
 <body>
-    <div class="ball-counter" id="ball-counter">
-        <button class="ball-container" id="ball-1" type="button" onClick="ballSelected">
-            <img src="ball1.png" class="ball" alt="ball">
-        </button>
-        <button class="ball-container" id="ball-2" type="button" onClick="ballSelected">
-            <img src="ball2.png" class="ball  ball-outlined" alt="ball">
-        </button>
-        <button class="ball-container" id="ball-3" type="button" onClick="ballSelected">
-            <img src="ball3.png" class="ball ball-transparent" alt="ball">
-        </button>
-        <button class="ball-container" id="ball-4" type="button" onClick="ballSelected">
-            <img src="ball4.png" class="ball" alt="ball">
-        </button>
-        <button class="ball-container" id="ball-5" type="button" onClick="ballSelected">
-            <img src="ball5.png" class="ball" alt="ball">
-        </button>
-        <button class="ball-container" id="ball-6" type="button" onClick="ballSelected">
-            <img src="ball6.png" class="ball" alt="ball">
-        </button>
-        <button class="ball-container" id="ball-7" type="button" onClick="ballSelected">
-            <img src="ball7.png" class="ball" alt="ball">
-        </button>
-    </div>
-    <div class="radar-container">
-        <img class="radar" id="radar" src="radar.png">
-        <div class="indicator" id="indicator-1"></div>
-        <div class="indicator" id="indicator-2"></div>
-        <div class="indicator" id="indicator-3"></div>
-        <div class="indicator" id="indicator-4"></div>
-        <div class="indicator" id="indicator-5"></div>
-        <div class="indicator" id="indicator-6"></div>
-        <div class="indicator" id="indicator-7"></div>
-    </div>
-    <div class="clue-container" id="clue-container">
-        oiafoia afoifeons osefnose ññ éáíóú AEIOU aeiou
-    </div>
     <script src="script.js"></script>
+    <div class="main-container">
+        <div class="clue-container" id="clue-container">
+            oiafoia afoifeons osefnose ññ éáíóú AEIOU aeiou wkjwf jkw ekjfwe kjk ewkjew ckwje jkcew kjewc wekjcew cwjwe
+            wcekw ejkjw ekewjkkwejkjewj ewkje vkj ewjk ew kew jewvkjv wekwejkwekjjk
+        </div>
+        <div class="radar-container">
+            <img class="radar" id="radar" src="radar.png">
+            <div class="indicator" id="indicator-1"></div>
+            <div class="indicator" id="indicator-2"></div>
+            <div class="indicator" id="indicator-3"></div>
+            <div class="indicator" id="indicator-4"></div>
+            <div class="indicator" id="indicator-5"></div>
+            <div class="indicator" id="indicator-6"></div>
+            <div class="indicator" id="indicator-7"></div>
+        </div>
+        <div class="ball-counter" id="ball-counter">
+            <button class="ball-container" id="ball-1" type="button" onClick="cycleState(this.id)">
+                <img src="ball1.png" class="ball" alt="ball">
+            </button>
+            <button class="ball-container" id="ball-2" type="button" onClick="cycleState(this.id)">
+                <img src="ball2.png" class="ball  ball-outlined" alt="ball">
+            </button>
+            <button class="ball-container" id="ball-3" type="button" onClick="cycleState(this.id)">
+                <img src="ball3.png" class="ball ball-transparent" alt="ball">
+            </button>
+            <button class="ball-container" id="ball-4" type="button" onClick="cycleState(this.id)">
+                <img src="ball4.png" class="ball" alt="ball">
+            </button>
+            <button class="ball-container" id="ball-5" type="button" onClick="cycleState(this.id)">
+                <img src="ball5.png" class="ball" alt="ball">
+            </button>
+            <button class="ball-container" id="ball-6" type="button" onClick="cycleState(this.id)">
+                <img src="ball6.png" class="ball" alt="ball">
+            </button>
+            <button class="ball-container" id="ball-7" type="button" onClick="cycleState(this.id)">
+                <img src="ball7.png" class="ball" alt="ball">
+            </button>
+        </div>
+    </div>
 </body>
 
 </html>

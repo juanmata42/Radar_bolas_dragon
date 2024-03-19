@@ -134,50 +134,45 @@ table {
     src: url(Saiyan-Sans.ttf);
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
+    height: 100%;
+    width: 100%;
+}
+
+.main-container {
     font-family: saiyanSans;
     color: #F3E603;
     background-color: #FA0011;
     font-size: 35px;
-    height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    gap: 30px;
+    padding: 30px;
+    position: relative;
+    height: 100%;
 }
 
-.ball-counter {
+.clue-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: auto;
-    padding: 30px;
-    gap: 15px
-}
-
-.ball-container {
-    border: none;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-}
-
-.ball {
-    width: 10vw;
+    border: #076700 5px solid;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
     height: auto;
-    max-width: 5vh;
-}
-
-.ball-transparent {
-    opacity: 0.5;
-
-}
-
-.ball-outlined {
-    border-radius: 50%;
-    box-shadow: #F3E603 0px 0px 10px 10px;
+    max-height: 20%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    position: relative;
 }
 
 .radar-container {
@@ -187,13 +182,14 @@ body {
     justify-content: center;
     height: auto;
     width: auto;
+    max-height: 50%;
+    padding: 10px;
     position: relative;
 }
 
 .radar {
-    width: 95vw;
-    height: auto;
-    max-width: 60vh;
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
@@ -293,14 +289,40 @@ body {
 } */
 
 
-.clue-container {
+.ball-counter {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 20px;
-    border: #076700 5px solid;
-    border-radius: 5px;
-    width: auto;
-    padding: 10px;
+    width: 100%;
+    padding: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.ball-container {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 20%;
+    height: auto;
+    max-width: 10vh;
+}
+
+.ball {
+    height: 100%;
+    width: 100%;
+}
+
+.ball-transparent {
+    opacity: 0.5;
+
+}
+
+.ball-outlined {
+    border-radius: 50%;
+    box-shadow: #F3E603 0px 0px 10px 10px;
 }
