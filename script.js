@@ -229,7 +229,7 @@ function startPressTimer(ballNumber) {
         indicator.style.top = indicatorsCenterPositions[ballNumber.split('-')[1]].top;
         indicator.style.left = indicatorsCenterPositions[ballNumber.split('-')[1]].left;
         invokeShenron();
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 2000);
 }
 
 // Setup the event listeners for each ball container
@@ -245,6 +245,11 @@ function setupLongPressListeners() {
         });
         ballContainer.addEventListener('touchstart', function (event) {
             timers[i] = startPressTimer(`ball-${i}`);
+        });
+
+        // Prevent the context menu from appearing on long press
+        ballContainer.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
         });
 
         // Cancel the timer if the user stops pressing
