@@ -123,8 +123,99 @@ function loadAllStates() {
         }
     }
     setClue();
+}/* 
+function createLightningEffect() {
+    let body = document.getElementsByTagName('body')[0];
+    let mainContainer = document.getElementById('main-container');
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    body.appendChild(overlay);
+    for (let i = 0; i < 10; i++) {
+        let lightning = document.createElement('img');
+        lightning.src = i % 2 === 0 ? 'lightning1.png' : 'lightning2.png';
+        let randomflip = Math.floor(Math.random() * 2);
+        lightning.style.transform = randomflip === 0 ? 'scaleX(-1)' : 'scaleX(1)';
+        lightning.classList.add('lightning');
+        lightning.style.top = `0%`;
+        lightning.style.left = `${Math.floor(Math.random() * 100)}%`;
+        body.appendChild(lightning);
+    }
+    setTimeout(function () {
+        overlay.remove();
+        let lightnings = document.getElementsByClassName('lightning');
+        for (let i = 0; i < lightnings.length; i++) {
+            lightnings[i].remove();
+        }
+    }, 100);
+}
+ */
+let lightningEffectInterval;
+let minimumInterval = 500; // Minimum interval to ensure at least 2 lightnings per second
+
+function createLightning(body) {
+    let lightning = document.createElement('img');
+    lightning.src = Math.random() > 0.5 ? 'lightning1.png' : 'lightning2.png';
+    lightning.style.transform = Math.random() > 0.5 ? 'scaleX(-1)' : '';
+    lightning.classList.add('lightning');
+    lightning.style.position = 'absolute';
+    lightning.style.top = `0%`;
+    lightning.style.left = `${Math.floor(Math.random() * 80)}%`;
+    body.appendChild(lightning);
+
+    setTimeout(() => {
+        lightning.remove();
+    }, 100); // Lightning lasts for 0.1 seconds
 }
 
+function startLightningEffect() {
+    let body = document.getElementsByTagName('body')[0];
+    if (!document.querySelector('.overlay')) { // Avoid adding multiple overlays
+        let overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        body.appendChild(overlay);
+    }
+
+    lightningEffectInterval = setInterval(() => {
+        for (let i = 0; i < 2; i++) { // Ensure at least 2 lightnings
+            createLightning(body);
+        }
+        setTimeout(() => { // Random additional lightning for variance
+            if (Math.random() > 0.5) { // 50% chance for an extra lightning
+                createLightning(body);
+            }
+        }, Math.floor(Math.random() * minimumInterval)); // Random time within the minimum interval
+    }, minimumInterval);
+}
+
+function stopLightningEffect() {
+    clearInterval(lightningEffectInterval);
+    document.querySelector('.overlay')?.remove();
+    let lightnings = document.getElementsByClassName('lightning');
+    while (lightnings.length > 0) {
+        lightnings[0].remove();
+    }
+}
+
+// helper function that checks if all balls are on state 2 and if so, play the secret sound
+function invokeShenron() {
+    for (let i = 1; i < 8; i++) {
+        let state = JSON.parse(loadState(`ball-${i}`));
+        if (state !== 2) {
+            return false;
+        }
+    }
+    return setTimeout(function () {
+        let audio = new Audio('shenron_effect.mp3');
+        audio.play();
+        setTimeout(function () {
+            let music = new Audio('shenron_theme.mp3');
+            music.play();
+            // loop the music
+            music.loop = true;
+            startLightningEffect();
+        }, 3000);
+    }, 2000);
+}
 // Helper function to set a timeout to change the ball state after 2 seconds
 function startPressTimer(ballNumber) {
     return setTimeout(function () {
@@ -137,7 +228,7 @@ function startPressTimer(ballNumber) {
         let indicator = document.getElementById(`indicator-${ballNumber.split('-')[1]}`);
         indicator.style.top = indicatorsCenterPositions[ballNumber.split('-')[1]].top;
         indicator.style.left = indicatorsCenterPositions[ballNumber.split('-')[1]].left;
-
+        invokeShenron();
     }, 2000); // 2000 milliseconds = 2 seconds
 }
 

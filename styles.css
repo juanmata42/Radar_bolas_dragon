@@ -315,6 +315,7 @@ body {
     width: 20%;
     height: auto;
     max-width: 10vh;
+    z-index: 5;
 }
 
 .ball {
@@ -330,4 +331,21 @@ body {
 .ball-outlined {
     border-radius: 50%;
     box-shadow: #F3E603 0px 0px 10px 10px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.lightning {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    z-index: 2;
+    animation: lightning 0.1s infinite;
 }
